@@ -1,0 +1,58 @@
+body * {
+  font-family: 'Oswald', sans-serif;
+}
+main{
+  background-color: #464646;
+}
+section:nth-child(1){
+display: flex;
+flex-direction: row;
+}
+div
+{
+  margin-right: 9%;
+}
+.location
+{
+  margin-top: 7%;
+}
+.location:last-child
+{
+  margin-bottom: 7%;
+}
+h2
+{
+  font-size: 20px;
+  padding-top: 30px;
+  height: 50px;
+  width: 500px;
+  font-weight: bold;
+  display: flex;
+  list-style: none;
+  background-color: darkgray;
+  justify-content: center;
+}
+.locationList
+{
+  height: 275px;
+  width: 500px;
+  background-color: lightgray;
+}
+.StoreInformation{
+  display: flex;
+  justify-content: center;
+  flex-wrap: wrap;
+}
+.address{
+  font-weight: bold;
+}
+.informationHeadings
+{
+  font-weight: bold;
+  padding-top: 20px;
+}
+p
+{
+  padding-left: 20px;
+  line-height: 1.5;
+}

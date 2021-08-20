@@ -1,6 +1,6 @@
 'use strict';
-
-const storeDiv = document.getElementById('locations');
+const formElem = document.getElementById('addLocation');
+const tableElem = document.getElementById('locations');
 const hours = ['6am','7am','8am','9am','10am','11am','12pm','1pm','2pm','3pm','4pm','5pm','6pm','7pm']
 function Store(name, minCust, maxCust, avgSalePerCust){
   this.name = name;
@@ -22,6 +22,23 @@ Store.prototype.hourlyCookieSales = function() {
     }
 }
 
+function handleSubmit(event)
+{
+  event.preventDefault()
+  const location = event.target.location.value;
+  const minCust = parseInt(event.target.minCust.value);
+  const maxCust = parseInt(event.target.maxCust.value);
+  const avgCust = parseInt(event.target.avgCust.value);
+  this.hourlySalesArray = [];
+  let newStore = new Store(location, minCust, maxCust, avgCust, this.hourlySalesArray);
+  console.log(Store.storeLocations);
+  let body = document.getElementById('tbody');
+  getAllCookieSales();
+  newStore.renderCity(body);
+  event.target.reset();
+}
+
+
 Store.storeLocations = [];
 
 new Store('Seattle', 23, 65, 6.3, [])
@@ -30,6 +47,7 @@ new Store('Dubai', 11, 38, 3.7, [])
 new Store('Paris', 20, 38, 2.3, [])
 new Store('Lima', 2, 16, 4.6, [])
 
+console.log(Store.storeLocations)
 //loop through all stores
 //calculate cookie sales in loop
 //push sales to array
@@ -41,90 +59,66 @@ function getAllCookieSales()
   }
 }
 getAllCookieSales();
-/* function _makeElement(tag, parent, text){
+
+function _makeElement(tag, parent, text){
 const element = document.createElement(tag);
 parent.appendChild(element);
 if(text){
   element.textContent = text;
 }
 return element;
-} */
-console.log(Store.storeLocations[0].hourlySalesArray)
-const tableElem = document.createElement('table');
-  storeDiv.appendChild(tableElem);
-
-  const row1 = document.createElement('tr')
-  tableElem.appendChild(row1);
+}
+  function getHours(){
+  const rowElem = document.createElement('td')
+  tableElem.appendChild(rowElem);
   for(let i = 0; i < hours.length; i++){
     let currenthour = hours[i]
-    const thElem = document.createElement('th')
-    row1.appendChild(thElem)
-    thElem.textContent = currenthour;
+    _makeElement('td', tableElem, currenthour)
   }
-  /* for(let j = 0; j < Store.storeLocations; j++){
-    const row = document.createElement('tr')
-    tableElem.appendChild(row);
-    for(let i = 0; i < Store.hourlySalesArray.length; i++){
-      let currenthourSales = Store.hourlySalesArray[i];
-      const tdElem = document.createElement('td')
-      row.appendChild(tdElem)
-      tdElem.textContent = currenthourSales;
+    _makeElement('th', tableElem, 'Store Daily Total')
+  }
+  getHours();
+  Store.prototype.renderCity = function(body){
+    let total = 0;
+    const rowElem = document.createElement('tr')
+    body.appendChild(rowElem);
+    const thElem = _makeElement('th', rowElem, this.name)
+    for(let i = 0; i < hours.length; i++)
+    {
+      let cookiesPerHour = this.hourlySalesArray[i];
+      total += cookiesPerHour;
+      _makeElement('td', rowElem, cookiesPerHour);
+      
     }
-  } */
-
-
-
-  const row2 = document.createElement('tr')
-  tableElem.appendChild(row2);
-
-  for(let i = 0; i < Store.storeLocations[0].hourlySalesArray.length; i++){
-    let currenthourSales = Store.storeLocations[0].hourlySalesArray[i];
-    const tdElem = document.createElement('td')
-    row2.appendChild(tdElem)
-    tdElem.textContent = currenthourSales;
+    _makeElement('td', rowElem, total);
+}
+function renderAllCitites(){
+  let tbodyElem = _makeElement('tbody', tableElem, null)
+  tbodyElem.id='tbody'
+  for(let i = 0; i < Store.storeLocations.length; i++){
+    Store.storeLocations[i].renderCity(tbodyElem);
   }
+}
+function footer() {
+  const tFootElem = _makeElement('tfoot', tableElem, null)
+  const rowElem = _makeElement('tr', tFootElem, null)
+  _makeElement('th', rowElem, 'Hourly Total')
+  let hourTotal = 0;
+  let grandTotal = 0;
+  for(let i = 0; i < hours.length; i++){
+    for(let j = 0; j < Store.storeLocations.length; j++)
+    {
+      let currerntStore = Store.storeLocations[j];
+      hourTotal += currerntStore.hourlySalesArray[i];
+      
+    }
+    _makeElement('td', rowElem, hourTotal);
+    grandTotal += hourTotal;
+    hourTotal = 0;
+  }
+  _makeElement('td', rowElem, grandTotal)
+}
+footer();
+renderAllCitites();
 
-  const row3 = document.createElement('tr')
-  tableElem.appendChild(row3);
-  for(let i = 0; i < Store.storeLocations[1].hourlySalesArray.length; i++){
-    let currenthourSales = Store.storeLocations[1].hourlySalesArray[i];
-    const tdElem = document.createElement('td')
-    row3.appendChild(tdElem)
-    tdElem.textContent = currenthourSales;
-  }
-
-  const row4 = document.createElement('tr')
-  tableElem.appendChild(row4);
-  for(let i = 0; i < Store.storeLocations[2].hourlySalesArray.length; i++){
-    let currenthourSales = Store.storeLocations[2].hourlySalesArray[i];
-    const tdElem = document.createElement('td')
-    row4.appendChild(tdElem)
-    tdElem.textContent = currenthourSales;
-  }
-  const row5 = document.createElement('tr')
-  tableElem.appendChild(row5);
-  for(let i = 0; i < Store.storeLocations[3].hourlySalesArray.length; i++){
-    let currenthourSales = Store.storeLocations[3].hourlySalesArray[i];
-    const tdElem = document.createElement('td')
-    row5.appendChild(tdElem)
-    tdElem.textContent = currenthourSales;
-  }
-  const row6 = document.createElement('tr')
-  tableElem.appendChild(row6);
-  for(let i = 0; i < Store.storeLocations[4].hourlySalesArray.length; i++){
-    let currenthourSales = Store.storeLocations[4].hourlySalesArray[i];
-    const tdElem = document.createElement('td')
-    row6.appendChild(tdElem)
-    tdElem.textContent = currenthourSales;
-  }
-
-// loop through all locations and call these functions
-/* function renderAllLocations() {
-  for (let i = 0; i < locationsArray.length; i++) {
-    const currentLocation = locationsArray[i];
-    currentLocation.createHourlySales()
-    renderStore(currentLocation);
-  }
-} */
-
-//renderAllLocations();
+formElem.addEventListener('submit', handleSubmit);

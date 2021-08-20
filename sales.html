@@ -10,8 +10,22 @@
       <h1> Fish Cookie Sales</h1>
     </Header>
     <main>
-      <div id="locations">
-      </div>
+      <form id="addLocation">
+        <fieldset>
+          <legend>Add Location</legend>
+            <label for="location">Location</label>
+            <input type="text" name="location">
+            <label for="minCust">Minimum Customer Per Hour</label>
+            <input type="number" name="minCust">
+            <label for="maxCust">Maximum Customer Per Hour</label>
+            <input type="number" name="maxCust">
+            <label for="avgCust">Average Cookies Bought Per Cutomer</label>
+            <input type="number" step=".1" name="avgCust">
+            <button type="submit" name="submit">Submit</button>
+        </fieldset>
+      </form>
+      <Table id="locations">
+      </Table>
     </main>
     <footer></footer>
     <script src="./js/app.js"></script>
