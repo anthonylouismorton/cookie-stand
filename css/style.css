@@ -56,3 +56,30 @@ p
   padding-left: 20px;
   line-height: 1.5;
 }
+body{
+  width: 80%;
+  margin: 0 Auto;
+}
+
+nav{  
+  background-color: #BB9EA5;
+  height: 80px;
+  display: flex;
+  justify-content: flex-start;
+  align-items: center;
+
+}
+nav p{
+  font-weight: bold;
+  font-family: 'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif;
+  font-size: 30px;
+  margin-right: 100px;
+}
+nav a{
+  margin-right: 66px;
+}
+nav img{
+  margin-left: 30px;
+  height: 30px;
+  width: 120px;
+}

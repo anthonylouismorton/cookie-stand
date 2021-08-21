@@ -35,6 +35,7 @@ function handleSubmit(event)
   let body = document.getElementById('tbody');
   getAllCookieSales();
   newStore.renderCity(body);
+  footer();
   event.target.reset();
 }
 
@@ -101,6 +102,7 @@ function renderAllCitites(){
 }
 function footer() {
   const tFootElem = _makeElement('tfoot', tableElem, null)
+  console.log('the footer function is being called', Store.storeLocations);
   const rowElem = _makeElement('tr', tFootElem, null)
   _makeElement('th', rowElem, 'Hourly Total')
   let hourTotal = 0;
