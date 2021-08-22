@@ -87,6 +87,8 @@ section:nth-child(1){
     justify-content: space-evenly;
     flex-wrap: wrap;
     margin-top: 60px;
+    padding-bottom: 40px;
+    border-bottom: #411B25 solid 40px;
 
   }
   section:nth-child(3) article{
@@ -94,6 +96,7 @@ section:nth-child(1){
     margin-right: 40px
   }
   section:nth-child(4){
+    margin-top: 60px;
     display: flex;
     justify-content: center;
     margin-bottom: 60px;
