@@ -34,7 +34,9 @@ function handleSubmit(event)
   console.log(Store.storeLocations);
   let body = document.getElementById('tbody');
   getAllCookieSales();
-  newStore.renderCity(body);
+  //newStore.renderCity(body);
+  tableElem.innerHTML = '';
+  renderAllCitites();
   footer();
   event.target.reset();
 }
@@ -74,7 +76,7 @@ return element;
   tableElem.appendChild(rowElem);
   for(let i = 0; i < hours.length; i++){
     let currenthour = hours[i]
-    _makeElement('td', tableElem, currenthour)
+    _makeElement('th', tableElem, currenthour)
   }
     _makeElement('th', tableElem, 'Store Daily Total')
   }
