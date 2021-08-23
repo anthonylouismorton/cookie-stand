@@ -8,18 +8,23 @@ nav{
   background-color: #BB9EA5;
   height: 80px;
   display: flex;
-  
   align-items: center;
 
 }
 nav p{
   font-weight: bold;
   font-family: 'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif;
+  color: #411B25;
   font-size: 30px;
   margin-right: 100px;
 }
 nav a{
-  margin-right: 50px;
+  font-family: 'Besley', serif;
+  font-size: 20px;
+  color: #411B25;
+}
+nav:first-of-type a{
+  margin-right: 80px;
 }
 nav img{
   margin-left: 30px;
@@ -34,6 +39,8 @@ h2{
  font-size: 25px;
  font-weight: bold;
  text-align: center;
+ font-family: 'Inria Serif', serif;
+ color: #432C32
 }
 section:nth-child(1){
   display: flex;
@@ -44,6 +51,8 @@ section:nth-child(1){
   font-weight: bold;
   padding-bottom: 40px;
   border-bottom: #411B25 solid 40px;
+  font-family: 'Inria Serif', serif;
+  color: #432C32
   }
   section:nth-child(1) img{
     height: 250px;
@@ -56,18 +65,26 @@ section:nth-child(1){
    font-size: 16px;
    font-weight: bold;
    text-align: center;
+   font-family: 'Inria Serif', serif;
+   color: #432C32
   }
   section:nth-child(1) :first-of-type h4{
     padding: 15px 0;
     height: 20px;
+    font-family: 'Inria Serif', serif;
+    color: #432C32
    }
    section:nth-child(1) :nth-of-type(2) h4{
     padding: 10px 0;
     height: 30px;
+    font-family: 'Inria Serif', serif;
+    color: #432C32
    }
    section:nth-child(1) :last-of-type h4{
     padding: 10px 0;
     height: 30px;
+    font-family: 'Inria Serif', serif;
+    color: #432C32
    }
 
   section:nth-child(2) {
@@ -75,12 +92,16 @@ section:nth-child(1){
     display: flex;
     justify-content: center;
     align-items: center;
+    font-family: 'Inria Serif', serif;
+    color: #432C32
   }
   section:nth-child(2) img {
     width: 500px;
   }
   section:nth-child(2) h2 {
     margin-top: -2.7px;
+    font-family: 'Inria Serif', serif;
+    color: #432C32
   }
   section:nth-child(3){
     display: flex;
@@ -89,33 +110,44 @@ section:nth-child(1){
     margin-top: 60px;
     padding-bottom: 40px;
     border-bottom: #411B25 solid 40px;
+    font-family: 'Inria Serif', serif;
+    color: #432C32
 
   }
   section:nth-child(3) article{
-    width: 250px;
-    margin-right: 40px
+    width: 325px;
+    margin-right: 40px;
+    font-family: 'Inria Serif', serif;
+    color: #432C32
+    
   }
   section:nth-child(4){
     margin-top: 60px;
     display: flex;
     justify-content: center;
     margin-bottom: 60px;
+    font-family: 'Inria Serif', serif;
+    color: #432C32
     }
     section:nth-child(4) img{
       width: 600px;
     }
   address{
-    background-color: #411B25;
-    color: #BB9EA5;
+    background-color: #BA9DA5;
     height: 190px;
     margin-bottom: 60px;
-    padding-left: 27px;
+    padding-left: 22px;
     padding-top: 25px;
+    font-family: 'Inria Serif', serif;
+    font-weight: bold;
+    color: #432C32
   }
   p
   {
   padding-left: 20px;
   line-height: 1.5;
+  font-family: 'Inria Serif', serif;
+  color: #432C32
   }
   form
   {
@@ -127,34 +159,42 @@ section:nth-child(1){
     font-weight: bold;
     line-height: normal;
     height: 80px;
+    font-family: 'Inria Serif', serif;
+    color: #432C32
+    
   }
   th{
     font-weight: bold;
     border: #BB9EA5 solid 3px;
-    color: #432C32;
+    color: #BA9DA5;
     padding:5px;
+    font-family: 'Noto Sans', sans-serif;
   }
   table{
     margin-top: 40px;
     width: 100%;
     border: #BB9EA5 solid 3px;
-    color: #432C32;
+    color: #BA9DA5;
     padding:5px;
+    font-family: 'Noto Sans', sans-serif;
   }
   tbody{
     text-align: center;
     border: #BB9EA5 solid 3px;
-    color: #432C32;
+    color: #BA9DA5;
     padding:5px;
+    font-family: 'Noto Sans', sans-serif;
   }
   tfoot{
     text-align: center;
     border: #BB9EA5 solid 3px;
-    color: #432C32;
+    color: #BA9DA5;
     padding:5px;
+    font-family: 'Noto Sans', sans-serif;
   }
   td{
     border: #BB9EA5 solid 3px;
     padding:5px;
-    color: #432C32;
+    color: #BA9DA5;
+    font-family: 'Noto Sans', sans-serif;
   }
